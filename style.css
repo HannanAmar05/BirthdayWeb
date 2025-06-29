@@ -1023,3 +1023,16 @@ body {
     color: white;
     z-index: 10000000000000000;
 }
+
+.best-wishes{
+    text-align: right;
+}
+
+
+.boxMail .boxMail-container:hover .card1 .userImg,
+.boxMail .boxMail-container:hover .card1 h3,
+.boxMail .boxMail-container:hover .card1 .username {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
