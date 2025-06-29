@@ -16,6 +16,8 @@
         rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
 </head>
 
 <body>
@@ -136,12 +138,12 @@
                 </div>
                 <div class="card2">
                     <div class="card2-content">
-                        <h3>To You!</h3>
-                        <h2>"Happy Birthday Lupi 🎉
+                        <h3>For You!!! 🎉</h3>
+                        <h2>"Happy Birthday Lupi Semoga panjang umur dan sehat selalu.
                             Semoga hari ini jadi awal dari hal-hal indah yang akan datang ke hidupmu.
-                            Aku belum kenal kamu lama, tapi setiap obrolan kita selalu bikin aku nyaman.
+                            Kita memang belum lama saling kenal, tapi setiap kali ngobrol sama kamu, rasanya selalu asik dan bikin nyaman.
                             Semoga tahun ini kamu makin bahagia, makin dikelilingi orang-orang yang tulus, dan semua harapanmu pelan-pelan jadi nyata.
-                            i think your pretty and im cute we should be pretty cute together ✨😊"
+                            I think your pretty and im cute we should be pretty cute together haha ✨😊"
                         </h2>
                         <div class="imageCute2">
                             <img src="cute2.png" alt="">
@@ -154,6 +156,34 @@
 
 </body>
 <script>
+    function startConfettiRain() {
+      const duration = 10000; // 5 detik
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 90,
+          spread: 360,
+          origin: {
+            x: Math.random(),
+            y: 0
+          }
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+
+    // Delay 2 detik sebelum memulai confetti
+    window.onload = function () {
+      setTimeout(startConfettiRain, 2000); // 2000 ms = 2 detik
+    };
+
+    // Jalankan saat halaman dimuat
+    window.onload = startConfettiRain;
     let datetxt = "29 Juni 2003";
     let datatxtletter = "My love. You are a very special girl. I always silently thank you for coming into my life. Today, I wish you all the best, lots of health, and lots of joy. I always hope we will celebrate many more birthdays like this together. Happy birthday to you.💕";
     let titleLetter = "For Lupi";

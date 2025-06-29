@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Confetti Rain</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tambahkan canvas-confetti dari CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    // Fungsi untuk membuat hujan confetti
+    function startConfettiRain() {
+      const duration = 5000; // durasi hujan dalam ms
+      const end = Date.now() + duration;
+
+      (function frame() {
+        // Confetti dari berbagai posisi atas layar
+        confetti({
+          particleCount: 5,
+          angle: 90,              // turun lurus ke bawah
+          spread: 360,
+          origin: {
+            x: Math.random(),     // posisi horizontal acak
+            y: 0                  // dari atas layar
+          }
+        });
+
+        // Ulangi selama durasi belum habis
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+
+    // Jalankan saat halaman dimuat
+    window.onload = startConfettiRain;
+  </script>
+
+</body>
+</html>
